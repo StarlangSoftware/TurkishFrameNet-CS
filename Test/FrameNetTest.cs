@@ -15,7 +15,7 @@ namespace Test
 
         [Test]
         public void TestFrameSize() {
-            Assert.AreEqual(101, frameNet.Size());
+            Assert.AreEqual(139, frameNet.Size());
         }
 
         [Test]
@@ -24,7 +24,7 @@ namespace Test
             for (var i = 0; i < frameNet.Size(); i++){
                 count += frameNet.GetFrame(i).Size();
             }
-            Assert.AreEqual(2001, count);
+            Assert.AreEqual(2561, count);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace Test
                     count += frameNet.GetFrame(i).GetLexicalUnit(j).Size();
                 }
             }
-            Assert.AreEqual(8624, count);
+            Assert.AreEqual(10476, count);
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace Test
                     }
                 }
             }
-            Assert.AreEqual(179, elements.Count);
+            Assert.AreEqual(203, elements.Count);
         }
 
     }

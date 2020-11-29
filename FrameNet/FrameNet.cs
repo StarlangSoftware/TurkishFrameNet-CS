@@ -20,7 +20,7 @@ namespace FrameNet
             var line = streamReader.ReadLine();
             while (line != null)
             {
-                var streamName = "FrameNet.Frames." + line;
+                var streamName = "FrameNet.AllFrames." + line;
                 frames.Add(new Frame(line.Substring(0, line.IndexOf(".xml")),
                     assembly.GetManifestResourceStream(streamName)));
                 line = streamReader.ReadLine();
