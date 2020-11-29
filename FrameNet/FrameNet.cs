@@ -11,7 +11,8 @@ namespace FrameNet
         * A constructor of {@link FrameNet} class which reads all frame files inside the files.txt file. For each
         * filename inside that file, the constructor creates a FrameNet.Frame and puts in inside the frames {@link ArrayList}.
         */
-        public FrameNet(){
+        public FrameNet()
+        {
             frames = new List<Frame>();
             var assembly = typeof(FrameNet).Assembly;
             var fileListStream = assembly.GetManifestResourceStream("FrameNet.files.txt");
@@ -19,18 +20,48 @@ namespace FrameNet
             var line = streamReader.ReadLine();
             while (line != null)
             {
-                frames.Add(new Frame(line.Substring(0, line.IndexOf(".xml")), assembly.GetManifestResourceStream("FrameNet.Frames." + line)));
+                var streamName = "FrameNet.Frames." + line;
+                frames.Add(new Frame(line.Substring(0, line.IndexOf(".xml")),
+                    assembly.GetManifestResourceStream(streamName)));
                 line = streamReader.ReadLine();
             }
         }
 
-        public int Size(){
+        public bool LexicalUnitExists(string synSetId)
+        {
+            foreach (var frame in frames)
+            {
+                if (frame.LexicalUnitExists(synSetId))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public List<Frame> GetFrames(string synSetId)
+        {
+            var result = new List<Frame>();
+            foreach (var frame in frames)
+            {
+                if (frame.LexicalUnitExists(synSetId))
+                {
+                    result.Add(frame);
+                }
+            }
+
+            return result;
+        }
+
+        public int Size()
+        {
             return frames.Count;
         }
 
-        public Frame GetFrame(int index){
+        public Frame GetFrame(int index)
+        {
             return frames[index];
         }
-
     }
 }

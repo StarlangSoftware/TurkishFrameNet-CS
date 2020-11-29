@@ -8,7 +8,8 @@ namespace FrameNet
         private string synSetId;
         private List<string> frameElements;
 
-        public LexicalUnit(XmlNode node){
+        public LexicalUnit(XmlNode node)
+        {
             frameElements = new List<string>();
             synSetId = node.Attributes["ID"].Value;
             foreach (XmlNode elementNode in node.ChildNodes)
@@ -17,13 +18,19 @@ namespace FrameNet
             }
         }
 
-        public int Size(){
+        public string GetSynSetId()
+        {
+            return synSetId;
+        }
+
+        public int Size()
+        {
             return frameElements.Count;
         }
 
-        public List<string> GetFrameElements(){
+        public List<string> GetFrameElements()
+        {
             return frameElements;
         }
-
     }
 }
