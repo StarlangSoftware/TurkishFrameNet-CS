@@ -22,7 +22,7 @@ namespace Test
         public void TestLexicalUnitSize() {
             var count = 0;
             for (var i = 0; i < frameNet.Size(); i++){
-                count += frameNet.GetFrame(i).Size();
+                count += frameNet.GetFrame(i).LexicalUnitSize();
             }
             Assert.AreEqual(2561, count);
         }
@@ -31,21 +31,17 @@ namespace Test
         public void TestFrameElementSize() {
             var count = 0;
             for (var i = 0; i < frameNet.Size(); i++){
-                for (var j = 0; j < frameNet.GetFrame(i).Size(); j++) {
-                    count += frameNet.GetFrame(i).GetLexicalUnit(j).Size();
-                }
+                count += frameNet.GetFrame(i).FrameElementSize();
             }
-            Assert.AreEqual(10476, count);
+            Assert.AreEqual(915, count);
         }
 
         [Test]
         public void TestDistinctFrameElements() {
             var elements = new HashSet<string>();
             for (var i = 0; i < frameNet.Size(); i++){
-                for (var j = 0; j < frameNet.GetFrame(i).Size(); j++) {
-                    foreach (var element in frameNet.GetFrame(i).GetLexicalUnit(j).GetFrameElements()){
-                        elements.Add(element);
-                    }
+                for (var j = 0; j < frameNet.GetFrame(i).FrameElementSize(); j++) {
+                    elements.Add(frameNet.GetFrame(i).GetFrameElement(j));
                 }
             }
             Assert.AreEqual(203, elements.Count);

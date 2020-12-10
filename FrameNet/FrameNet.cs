@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 
 namespace FrameNet
 {
@@ -15,15 +16,24 @@ namespace FrameNet
         {
             frames = new List<Frame>();
             var assembly = typeof(FrameNet).Assembly;
-            var fileListStream = assembly.GetManifestResourceStream("FrameNet.files.txt");
-            var streamReader = new StreamReader(fileListStream);
-            var line = streamReader.ReadLine();
-            while (line != null)
+            var fileListStream = assembly.GetManifestResourceStream("FrameNet.framenet.xml");
+            var doc = new XmlDocument();
+            doc.Load(fileListStream);
+            foreach (XmlNode frameNode in doc.DocumentElement.ChildNodes)
             {
-                var streamName = "FrameNet.AllFrames." + line;
-                frames.Add(new Frame(line.Substring(0, line.IndexOf(".xml")),
-                    assembly.GetManifestResourceStream(streamName)));
-                line = streamReader.ReadLine();
+                var frame = new Frame(frameNode.Attributes["NAME"].Value);
+                var lexicalUnits = frameNode.FirstChild;
+                foreach (XmlNode lexicalUnitNode in lexicalUnits.ChildNodes)
+                {
+                    frame.AddLexicalUnit(lexicalUnitNode.InnerText);
+                }
+
+                var frameElements = lexicalUnits.NextSibling;
+                foreach (XmlNode frameElementNode in frameElements.ChildNodes)
+                {
+                    frame.AddFrameElement(frameElementNode.InnerText);
+                }
+                frames.Add(frame);
             }
         }
 
