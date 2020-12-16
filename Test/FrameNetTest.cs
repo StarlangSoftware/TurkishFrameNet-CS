@@ -33,7 +33,7 @@ namespace Test
             for (var i = 0; i < frameNet.Size(); i++){
                 count += frameNet.GetFrame(i).FrameElementSize();
             }
-            Assert.AreEqual(915, count);
+            Assert.AreEqual(1665, count);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace Test
                     elements.Add(frameNet.GetFrame(i).GetFrameElement(j));
                 }
             }
-            Assert.AreEqual(203, elements.Count);
+            Assert.AreEqual(289, elements.Count);
         }
 
     }

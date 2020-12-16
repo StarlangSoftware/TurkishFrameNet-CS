@@ -1,11 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4d6c04d9_002D66b6_002D4cd9_002D924c_002D519afd12d052/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FrameNetTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4d6c04d9_002D66b6_002D4cd9_002D924c_002D519afd12d052/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FrameNetTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::.NETCoreApp,Version=v3.1::Test.FrameNetTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::.NETCoreApp,Version=v3.1::Test.FrameElementTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d33b2353_002D9143_002D4627_002D8747_002D85bf36a7e31b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FrameElementTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d33b2353_002D9143_002D4627_002D8747_002D85bf36a7e31b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FrameElementTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::.NETCoreApp,Version=v3.1::Test.FrameElementTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::.NETCoreApp,Version=v3.1::Test.FrameNetTest&lt;/TestId&gt;
