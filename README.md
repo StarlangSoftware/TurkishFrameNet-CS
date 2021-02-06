@@ -19,7 +19,7 @@ Use Git for cloning the code to your local or below line for Ubuntu:
 
 	git clone <your-fork-git-link>
 
-A directory called DataStructure will be created. Or you can use below link for exploring the code:
+A directory called TurkishFrameNet-CS will be created. Or you can use below link for exploring the code:
 
 	git clone https://github.com/starlangsoftware/TurkishFrameNet-CS.git
 
@@ -27,7 +27,7 @@ A directory called DataStructure will be created. Or you can use below link for 
 
 To import projects from Git with version control:
 
-* Open Rider IDE , select Get From Version Control.
+* Open Rider IDE, select Get From Version Control.
 
 * In the Import window, click URL tab and paste github URL.
 
