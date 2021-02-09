@@ -60,3 +60,12 @@ Result: The imported project is listed in the Project Explorer view and files ar
 **From IDE**
 
 After being done with the downloading and opening project, select **Build Solution** option from **Build** menu. After compilation process, user can run TurkishFrameNet-CS.
+
+# Cite
+
+	@inproceedings{marsan20,
+ 	title = {{B}uilding the {T}urkish {F}rame{N}et},
+ 	year = {2021},
+ 	author = {B. Marsan and N. Kara and M. Ozcelik and B. N. Arican and N. Cesur and A. Kuzgun and E. Saniyar and O. Kuyrukcu and O. T. Y{\i}ld{\i}z},
+ 	booktitle = {Proceedings of GWC 2021}
+	}
