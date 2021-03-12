@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>NlpToolkit-FrameNet</PackageId>
+        <PackageVersion>1.0.4</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="framenet.xml" />
+      <EmbeddedResource Include="framenet.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+</Project>
