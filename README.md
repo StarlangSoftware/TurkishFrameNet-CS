@@ -20,7 +20,7 @@ Turkish predicate compilation offered by TRopBank and KeNet for a lemma-by-lemma
 For Developers
 ============
 
-You can also see [Java](https://github.com/starlangsoftware/TurkishFrameNet), [Python](https://github.com/starlangsoftware/TurkishFrameNet-Py), [Cython](https://github.com/starlangsoftware/TurkishFrameNet-Cy), [C++](https://github.com/starlangsoftware/TurkishFrameNet-CPP), [Swift](https://github.com/starlangsoftware/TurkishFrameNet-Swift) repository.
+You can also see [Java](https://github.com/starlangsoftware/TurkishFrameNet), [Python](https://github.com/starlangsoftware/TurkishFrameNet-Py), [Cython](https://github.com/starlangsoftware/TurkishFrameNet-Cy), [C++](https://github.com/starlangsoftware/TurkishFrameNet-CPP), [Js](https://github.com/starlangsoftware/TurkishFrameNet-Js), [Swift](https://github.com/starlangsoftware/TurkishFrameNet-Swift) repository.
 
 ## Requirements
 
