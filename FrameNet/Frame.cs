@@ -4,9 +4,9 @@ namespace FrameNet
 {
     public class Frame
     {
-        private string name;
-        private List<string> lexicalUnits;
-        private List<string> frameElements;
+        private string _name;
+        private List<string> _lexicalUnits;
+        private List<string> _frameElements;
 
         /**
         * Constructor of {@link Frame} class which takes inputStream as input and reads the frame
@@ -15,49 +15,49 @@ namespace FrameNet
         */
         public Frame(string name)
         {
-            this.name = name;
-            lexicalUnits = new List<string>();
-            frameElements = new List<string>();
+            this._name = name;
+            _lexicalUnits = new List<string>();
+            _frameElements = new List<string>();
         }
 
         public void AddLexicalUnit(string lexicalUnit)
         {
-            lexicalUnits.Add(lexicalUnit);
+            _lexicalUnits.Add(lexicalUnit);
         }
 
         public void AddFrameElement(string frameElement)
         {
-            frameElements.Add(frameElement);
+            _frameElements.Add(frameElement);
         }
 
         public bool LexicalUnitExists(string synSetId)
         {
-            return lexicalUnits.Contains(synSetId);
+            return _lexicalUnits.Contains(synSetId);
         }
 
         public string GetLexicalUnit(int index)
         {
-            return lexicalUnits[index];
+            return _lexicalUnits[index];
         }
 
         public string GetFrameElement(int index)
         {
-            return frameElements[index];
+            return _frameElements[index];
         }
 
         public int LexicalUnitSize()
         {
-            return lexicalUnits.Count;
+            return _lexicalUnits.Count;
         }
 
         public int FrameElementSize()
         {
-            return frameElements.Count;
+            return _frameElements.Count;
         }
 
         public string GetName()
         {
-            return name;
+            return _name;
         }
     }
 }

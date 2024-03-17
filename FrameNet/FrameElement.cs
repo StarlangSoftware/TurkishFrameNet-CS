@@ -1,10 +1,12 @@
+using System;
+
 namespace FrameNet
 {
     public class FrameElement
     {
-        private string frameElementType;
-        private string frame;
-        private string id;
+        private string _frameElementType;
+        private string _frame;
+        private string _id;
 
         /**
         * <summary>A constructor of {@link FrameElement} class which takes frameElement string which is in the form of
@@ -17,13 +19,13 @@ namespace FrameNet
         {
             if (frameElement.Contains("$"))
             {
-                frameElementType = frameElement.Substring(0, frameElement.IndexOf("$"));
-                frame = frameElement.Substring(frameElement.IndexOf("$") + 1, frameElement.LastIndexOf("$") - frameElement.IndexOf("$") - 1);
-                id = frameElement.Substring(frameElement.LastIndexOf("$") + 1);
+                _frameElementType = frameElement.Substring(0, frameElement.IndexOf("$", StringComparison.Ordinal));
+                _frame = frameElement.Substring(frameElement.IndexOf("$", StringComparison.Ordinal) + 1, frameElement.LastIndexOf("$", StringComparison.Ordinal) - frameElement.IndexOf("$", StringComparison.Ordinal) - 1);
+                _id = frameElement.Substring(frameElement.LastIndexOf("$", StringComparison.Ordinal) + 1);
             }
             else
             {
-                frameElementType = "NONE";
+                _frameElementType = "NONE";
             }
         }
 
@@ -37,9 +39,9 @@ namespace FrameNet
          */
         public FrameElement(string frameElementType, string frame, string id)
         {
-            this.frameElementType = frameElementType;
-            this.frame = frame;
-            this.id = id;
+            this._frameElementType = frameElementType;
+            this._frame = frame;
+            this._id = id;
         }
 
         /**
@@ -49,7 +51,7 @@ namespace FrameNet
          */
         public string GetFrameElementType()
         {
-            return frameElementType;
+            return _frameElementType;
         }
 
         /**
@@ -59,7 +61,7 @@ namespace FrameNet
          */
         public string GetFrame()
         {
-            return frame;
+            return _frame;
         }
 
         /**
@@ -69,7 +71,7 @@ namespace FrameNet
          */
         public string GetId()
         {
-            return id;
+            return _id;
         }
 
         /**
@@ -80,12 +82,12 @@ namespace FrameNet
          */
         public override string ToString()
         {
-            if (frameElementType == "NONE")
+            if (_frameElementType == "NONE")
             {
-                return frameElementType;
+                return _frameElementType;
             }
 
-            return frameElementType + "$" + frame + "$" + id;
+            return _frameElementType + "$" + _frame + "$" + _id;
         }
     }
 }

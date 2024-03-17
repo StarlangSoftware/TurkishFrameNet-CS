@@ -6,7 +6,7 @@ namespace FrameNet
 {
     public class FrameNet
     {
-        private List<Frame> frames;
+        private List<Frame> _frames;
 
         /**
         * A constructor of {@link FrameNet} class which reads all frame files inside the files.txt file. For each
@@ -14,7 +14,7 @@ namespace FrameNet
         */
         public FrameNet()
         {
-            frames = new List<Frame>();
+            _frames = new List<Frame>();
             var assembly = typeof(FrameNet).Assembly;
             var fileListStream = assembly.GetManifestResourceStream("FrameNet.framenet.xml");
             var doc = new XmlDocument();
@@ -33,13 +33,13 @@ namespace FrameNet
                 {
                     frame.AddFrameElement(frameElementNode.InnerText);
                 }
-                frames.Add(frame);
+                _frames.Add(frame);
             }
         }
 
         public bool LexicalUnitExists(string synSetId)
         {
-            foreach (var frame in frames)
+            foreach (var frame in _frames)
             {
                 if (frame.LexicalUnitExists(synSetId))
                 {
@@ -53,7 +53,7 @@ namespace FrameNet
         public List<Frame> GetFrames(string synSetId)
         {
             var result = new List<Frame>();
-            foreach (var frame in frames)
+            foreach (var frame in _frames)
             {
                 if (frame.LexicalUnitExists(synSetId))
                 {
@@ -66,12 +66,12 @@ namespace FrameNet
 
         public int Size()
         {
-            return frames.Count;
+            return _frames.Count;
         }
 
         public Frame GetFrame(int index)
         {
-            return frames[index];
+            return _frames[index];
         }
     }
 }
