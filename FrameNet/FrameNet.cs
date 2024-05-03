@@ -37,6 +37,11 @@ namespace FrameNet
             }
         }
 
+        /// <summary>
+        /// Checks if the given lexical unit exists in any frame in the frame set.
+        /// </summary>
+        /// <param name="synSetId">Id of the lexical unit</param>
+        /// <returns>True if any frame contains the given lexical unit, false otherwise.</returns>
         public bool LexicalUnitExists(string synSetId)
         {
             foreach (var frame in _frames)
@@ -50,6 +55,11 @@ namespace FrameNet
             return false;
         }
 
+        /// <summary>
+        /// Returns an array of frames that contain the given lexical unit in their lexical units
+        /// </summary>
+        /// <param name="synSetId">Id of the lexical unit.</param>
+        /// <returns>An array of frames that contains the given lexical unit.</returns>
         public List<Frame> GetFrames(string synSetId)
         {
             var result = new List<Frame>();
@@ -64,11 +74,20 @@ namespace FrameNet
             return result;
         }
 
+        /// <summary>
+        /// Returns number of frames in the frame set.
+        /// </summary>
+        /// <returns>Number of frames in the frame set.</returns>
         public int Size()
         {
             return _frames.Count;
         }
 
+        /// <summary>
+        /// Returns the element at the specified position in the frame list.
+        /// </summary>
+        /// <param name="index">index of the element to return</param>
+        /// <returns>The element at the specified position in the frame list.</returns>
         public Frame GetFrame(int index)
         {
             return _frames[index];
