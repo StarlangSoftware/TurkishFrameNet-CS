@@ -89,5 +89,14 @@ namespace FrameNet
 
             return _frameElementType + "$" + _frame + "$" + _id;
         }
+        
+        /**
+         * Setter for the id
+         * @param id New id of the frame element
+         */
+        public void SetId(string id) {
+            this._id = id;
+        }
+        
     }
 }

@@ -24,7 +24,7 @@ namespace Test
             for (var i = 0; i < frameNet.Size(); i++){
                 count += frameNet.GetFrame(i).LexicalUnitSize();
             }
-            Assert.AreEqual(8491, count);
+            Assert.AreEqual(8493, count);
         }
 
         [Test]

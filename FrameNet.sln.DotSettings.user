@@ -12,5 +12,6 @@
     &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::.NETCoreApp,Version=v3.1::Test.FrameElementTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::.NETCoreApp,Version=v3.1::Test.FrameNetTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::net8.0::Test.FrameElementTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::1E6A83C6-0E66-42CF-9985-B21408F740EF::net8.0::Test.FrameNetTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
