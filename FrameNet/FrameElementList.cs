@@ -5,12 +5,12 @@ namespace FrameNet;
 public class FrameElementList
 {
     private List<FrameElement> _frameElements;
-
-    /**
-     * Constructor of frame element list from a string. The frame elements for a word is a concatenated list of
-     * frame element separated via '#' character.
-     * @param frameElementList String consisting of frame elements separated with '#' character.
-     */
+    
+    /// <summary>
+    /// Constructor of frame element list from a string. The frame elements for a word is a concatenated list of
+    /// frame element separated via '#' character.
+    /// </summary>
+    /// <param name="frameElementList">String consisting of frame elements separated with '#' character.</param>
     public FrameElementList(string frameElementList)
     {
         _frameElements = new List<FrameElement>();
@@ -20,12 +20,12 @@ public class FrameElementList
             _frameElements.Add(new FrameElement(item));
         }
     }
-
-    /**
-     * Overloaded toString method to convert a frame element list to a string. Concatenates the string forms of all
-     * frame element with '#' character.
-     * @return String form of the frame element list.
-     */
+    
+    /// <summary>
+    /// Overloaded toString method to convert a frame element list to a string. Concatenates the string forms of all
+    /// frame element with '#' character.
+    /// </summary>
+    /// <returns>String form of the frame element list.</returns>
     public override string ToString()
     {
         if (_frameElements.Count == 0)
@@ -44,11 +44,11 @@ public class FrameElementList
         }
     }
 
-    /**
-     * Replaces id's of predicates, which have previousId as synset id, with currentId.
-     * @param previousId Previous id of the synset.
-     * @param currentId Replacement id.
-     */
+    /// <summary>
+    /// Replaces id's of predicates, which have previousId as synset id, with currentId.
+    /// </summary>
+    /// <param name="previousId">Previous id of the synset.</param>
+    /// <param name="currentId">Replacement id.</param>
     public void UpdateConnectedId(string previousId, string currentId)
     {
         foreach (var frameElement in _frameElements)
@@ -60,10 +60,10 @@ public class FrameElementList
         }
     }
 
-    /**
-     * Adds a predicate argument to the frame element list of this word.
-     * @param predicateId Synset id of this predicate.
-     */
+    /// <summary>
+    /// Adds a predicate argument to the frame element list of this word.
+    /// </summary>
+    /// <param name="predicateId">Synset id of this predicate.</param>
     public void AddPredicate(string predicateId)
     {
         if (_frameElements.Count > 0 && _frameElements[0].GetFrameElementType().Equals("NONE"))
@@ -74,9 +74,9 @@ public class FrameElementList
         _frameElements.Add(new FrameElement("PREDICATE", "NONE", predicateId));
     }
 
-    /**
-     * Removes the predicate with the given predicate id.
-     */
+    /// <summary>
+    /// Removes the predicate with the given predicate id.
+    /// </summary>
     public void RemovePredicate()
     {
         foreach (var frameElement in _frameElements)
@@ -89,10 +89,10 @@ public class FrameElementList
         }
     }
 
-    /**
-     * Checks if one of the frame elements is a predicate.
-     * @return True, if one of the frame elements is predicate; false otherwise.
-     */
+    /// <summary>
+    /// Checks if one of the frame elements is a predicate.
+    /// </summary>
+    /// <returns>True, if one of the frame elements is predicate; false otherwise.</returns>
     public bool ContainsPredicate()
     {
         foreach (var frameElement in _frameElements)
@@ -106,11 +106,11 @@ public class FrameElementList
         return false;
     }
 
-    /**
-     * Checks if one of the frame element is a predicate with the given id.
-     * @param predicateId Synset id to check.
-     * @return True, if one of the frame element is predicate; false otherwise.
-     */
+    /// <summary>
+    /// Checks if one of the frame element is a predicate with the given id.
+    /// </summary>
+    /// <param name="predicateId">Synset id to check.</param>
+    /// <returns>True, if one of the frame element is predicate; false otherwise.</returns>
     public bool ContainsPredicateWithId(string predicateId)
     {
         foreach (var frameElement in _frameElements)
@@ -124,10 +124,10 @@ public class FrameElementList
         return false;
     }
 
-    /**
-     * Returns the frame elements as an array list of strings.
-     * @return Frame elements as an array list of strings.
-     */
+    /// <summary>
+    /// Returns the frame elements as an array list of strings.
+    /// </summary>
+    /// <returns>Frame elements as an array list of strings.</returns>
     public List<string> GetFrameElements()
     {
         var result = new List<string>();
@@ -139,13 +139,13 @@ public class FrameElementList
         return result;
     }
 
-    /**
-     * Checks if the given argument with the given type and id exists or not.
-     * @param frameElementType Type of the frame element to search for.
-     * @param frame frame Name of the frame to search for
-     * @param id Id of the frame element to search for.
-     * @return True if the frame element exists, false otherwise.
-     */
+    /// <summary>
+    /// Checks if the given argument with the given type and id exists or not.
+    /// </summary>
+    /// <param name="frameElementType">Type of the frame element to search for.</param>
+    /// <param name="frame">frame Name of the frame to search for</param>
+    /// <param name="id">Id of the frame element to search for.</param>
+    /// <returns>True if the frame element exists, false otherwise.</returns>
     public bool ContainsFrameElement(string frameElementType, string frame, string id)
     {
         foreach (var frameElement in _frameElements)
